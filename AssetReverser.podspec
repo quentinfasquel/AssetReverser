@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'AssetReverser'
-  s.version = '0.1'
+  s.version = '0.0.1'
   s.license = 'MIT'
   s.summary = 'Video `Reverser` in Swift'
   s.homepage = 'https://github.com/quentinfasquel/AssetReverser'
