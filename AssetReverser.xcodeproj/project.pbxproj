@@ -56,7 +56,7 @@
 			isa = PBXGroup;
 			children = (
 				66249C4D1E40A2DD0088AB6C /* Source */,
-				66249C581E40A2DD0088AB6C /* AssetReverserTests */,
+				66249C581E40A2DD0088AB6C /* Tests */,
 				66249C4C1E40A2DD0088AB6C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -80,13 +80,12 @@
 			path = Source;
 			sourceTree = "<group>";
 		};
-		66249C581E40A2DD0088AB6C /* AssetReverserTests */ = {
+		66249C581E40A2DD0088AB6C /* Tests */ = {
 			isa = PBXGroup;
 			children = (
 				66249C591E40A2DD0088AB6C /* AssetReverserTests.swift */,
 				66249C5B1E40A2DD0088AB6C /* Info.plist */,
 			);
-			name = AssetReverserTests;
 			path = Tests;
 			sourceTree = "<group>";
 		};
