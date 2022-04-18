@@ -56,6 +56,7 @@ public class AssetReverseSession {
     
     // MARK: - Control Flow
 
+    @available(*, renamed: "reverse()")
     public func reverseAsynchronously(completionHandler: @escaping ((AVURLAsset?, Error?) -> Void)) {
         self.completionHandler = completionHandler
         // Status unknown means `idle`
@@ -84,6 +85,22 @@ public class AssetReverseSession {
                 // startWriting will then keep on calling `continueReading` until
                 // reading is completed.
                 self.startWriting()
+            }
+        }
+    }
+
+    @available(iOS 13, *)
+    public func reverse() async throws -> AVURLAsset {
+        return try await withCheckedThrowingContinuation { continuation in
+            reverseAsynchronously { result, error in
+                if let error = error {
+                    continuation.resume(throwing: error)
+                    return
+                }
+                guard let result = result else {
+                    fatalError("Expected non-nil result 'result' for nil error")
+                }
+                continuation.resume(returning: result)
             }
         }
     }
