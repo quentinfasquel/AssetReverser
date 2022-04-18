@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,7 +13,7 @@
 		66249C7E1E40C0A90088AB6C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66249C7C1E40C0A90088AB6C /* LaunchScreen.storyboard */; };
 		66249C901E40C0F10088AB6C /* countdown-sample.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 66249C8F1E40C0F10088AB6C /* countdown-sample.mp4 */; };
 		663355811E40D968003698DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6633557F1E40D968003698DC /* Main.storyboard */; };
-		663355841E40D995003698DC /* AssetReverser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 663355831E40D995003698DC /* AssetReverser.framework */; };
+		66672F8B280CC0C300685403 /* AssetReverser in Frameworks */ = {isa = PBXBuildFile; productRef = 66672F8A280CC0C300685403 /* AssetReverser */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +26,7 @@
 		66249C8F1E40C0F10088AB6C /* countdown-sample.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "countdown-sample.mp4"; sourceTree = "<group>"; };
 		663355801E40D968003698DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		663355831E40D995003698DC /* AssetReverser.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetReverser.framework; path = "../DerivedData/AssetReverser/Build/Products/Debug-iphonesimulator/AssetReverser.framework"; sourceTree = "<group>"; };
+		66672F89280CC0A400685403 /* AssetReverser */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = AssetReverser; path = ..; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,7 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				663355841E40D995003698DC /* AssetReverser.framework in Frameworks */,
+				66672F8B280CC0C300685403 /* AssetReverser in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,6 +44,7 @@
 		66249C671E40C0A90088AB6C = {
 			isa = PBXGroup;
 			children = (
+				66672F89280CC0A400685403 /* AssetReverser */,
 				66249C721E40C0A90088AB6C /* Source */,
 				66249C711E40C0A90088AB6C /* Products */,
 				663355821E40D995003698DC /* Frameworks */,
@@ -104,6 +106,9 @@
 			dependencies = (
 			);
 			name = AssetReverserExample;
+			packageProductDependencies = (
+				66672F8A280CC0C300685403 /* AssetReverser */,
+			);
 			productName = AssetReverserExample;
 			productReference = 66249C701E40C0A90088AB6C /* AssetReverserExample.app */;
 			productType = "com.apple.product-type.application";
@@ -129,6 +134,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -274,7 +280,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -286,10 +293,13 @@
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.quentinfasquel.AssetReverserExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -300,10 +310,13 @@
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.quentinfasquel.AssetReverserExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -329,6 +342,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		66672F8A280CC0C300685403 /* AssetReverser */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = AssetReverser;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 66249C681E40C0A90088AB6C /* Project object */;
 }

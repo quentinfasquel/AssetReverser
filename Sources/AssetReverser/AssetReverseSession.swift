@@ -129,7 +129,7 @@ public class AssetReverseSession {
         }
 
         // Get video track
-        guard let videoTrack: AVAssetTrack = asset.tracks(withMediaType: AVMediaTypeVideo).first else {
+        guard let videoTrack: AVAssetTrack = asset.tracks(withMediaType: .video).first else {
             // TODO: throw error no video track
             throw NSError()
         }
@@ -142,7 +142,7 @@ public class AssetReverseSession {
             throw NSError()
         }
 
-        assetWriter = try AVAssetWriter(outputURL: outputFileURL, fileType: AVFileTypeMPEG4)
+        assetWriter = try AVAssetWriter(outputURL: outputFileURL, fileType: .mp4)
         assetWriterInput = makeWriterInput(for: videoTrack)
         pixelBufferAdaptor = AVAssetWriterInputPixelBufferAdaptor(assetWriterInput: assetWriterInput, sourcePixelBufferAttributes: nil)
 
@@ -187,7 +187,7 @@ public class AssetReverseSession {
             ],
         ]
 
-        let writerInput = AVAssetWriterInput(mediaType: AVMediaTypeVideo, outputSettings: writerSettings, sourceFormatHint: formatHint)
+        let writerInput = AVAssetWriterInput(mediaType: .video, outputSettings: writerSettings, sourceFormatHint: formatHint)
         writerInput.expectsMediaDataInRealTime = false
         return writerInput
     }
@@ -231,7 +231,7 @@ public class AssetReverseSession {
             switch self.assetReader.status {
             case .reading, .completed:
                 if self.startTime == nil {
-                    self.startTime = kCMTimeZero
+                    self.startTime = .zero
                     self.assetWriter.startSession(atSourceTime: self.startTime!)
                     // "assetWriter start session at time \(self.startTime!.seconds)"
                 } // else "assetWriter continue writing"
