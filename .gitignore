@@ -1,40 +1,28 @@
-# Mac OS X
-.DS_Store
+# Created by https://www.toptal.com/developers/gitignore/api/swiftpm,carthage,cocoapods
+# Edit at https://www.toptal.com/developers/gitignore?templates=swiftpm,carthage,cocoapods
 
-# Xcode
-
-## Build generated
-build/
-DerivedData
-
-## Various settings
-*.pbxuser
-!default.pbxuser
-*.mode1v3
-!default.mode1v3
-*.mode2v3
-!default.mode2v3
-*.perspectivev3
-!default.perspectivev3
-xcuserdata
-*.xcuserdata
-
-## Other
-*.xccheckout
-*.moved-aside
-*.xcuserstate
-*.xcscmblueprint
-
-## Obj-C/Swift specific
-*.hmap
-*.ipa
-
-## Playgrounds
-timeline.xctimeline
-playground.xcworkspace
-
-# Swift Package Manager
-.build/
-
+### Carthage ###
 # Carthage
+#
+# Add this line if you want to avoid checking in source code from Carthage dependencies.
+# Carthage/Checkouts
+
 Carthage/Build
+
+### CocoaPods ###
+## CocoaPods GitIgnore Template
+
+# CocoaPods - Only use to conserve bandwidth / Save time on Pushing
+#           - Also handy if you have a large number of dependant pods
+#           - AS PER https://guides.cocoapods.org/using/using-cocoapods.html NEVER IGNORE THE LOCK FILE
+Pods/
+
+### SwiftPM ###
+Packages
+.build/
+.swiftpm
+xcuserdata
+DerivedData/
+*.xcodeproj
+
+# End of https://www.toptal.com/developers/gitignore/api/swiftpm,carthage,cocoapods
