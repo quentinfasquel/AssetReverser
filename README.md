@@ -55,7 +55,7 @@ end
 Add this to `Cartfile`
 
 ```
-github "quentinfasquel/AssetReverser" "6.5.0"
+github "quentinfasquel/AssetReverser" "0.0.2"
 ```
 
 ```
